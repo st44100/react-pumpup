@@ -1,16 +1,21 @@
 # React Suckup
 
-
 ⛲️ Suck up data from bottom to top. ⛲️
+
+## About
+
+Define data retrieve logic near component and Suck up data to Top of application.
 
 ## Install
 
-T.B.D.
+```
+$ npm install st44100/react-suckup
+```
 
 ## Example
 
 ```Foo.jsx
-import { provideSucks } from 'react-sucks';
+import { provideSucks } from 'react-suckup';
 
 // Define sucks
 export const sucks = provideSuckup((state: any, locals: any) => {
@@ -40,5 +45,5 @@ const suckedData = suckup(preparedState, {
   id: '00010'
 });
 
-console.log(suckedData); // #=> 'value 2'
+console.log(suckedData[0]); // #=> 'value 2'
 ```
