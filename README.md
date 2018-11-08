@@ -31,7 +31,7 @@ return sucks(Foo);
 ```
 
 ```server.js
-import { renderToString } from 'react-dom/server';
+import suckup from 'react-suckup';
 import Foo from 'Foo.jsx';
 
 const preparedState = {
