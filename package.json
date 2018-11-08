@@ -1,0 +1,23 @@
+{
+  "name": "react-suckup",
+  "version": "0.0.1",
+  "description": "Suck up data from bottom to Top",
+  "main": "dist/index.js",
+  "author": "st44100 <st44100@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.9",
+    "@types/mocha": "^5.2.5",
+    "async-to-gen": "^1.4.0",
+    "jest": "^23.6.0",
+    "rollup": "^0.67.0",
+    "rollup-plugin-typescript": "^1.0.0",
+    "ts-jest": "^23.10.4",
+    "tslib": "^1.9.3",
+    "typescript": "^3.1.6"
+  }
+}

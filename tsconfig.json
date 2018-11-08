@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "typeRoots": ["./node_modules/@types", "./types"],
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "target": "es5",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "baseUrl": ".",
+    "rootDirs": ["src", "test"],
+    "lib": ["es2015", "es2017", "dom"]
+  },
+  "exclude": [
+    "./node_modules"
+  ]
+}
