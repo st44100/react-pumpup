@@ -1,7 +1,7 @@
 
-import suckup, { provideSucks, propName } from '../src';
+import pumpup, { providePump, propName } from '../src';
 
-describe('provideSuckups', () => {
+describe('providePump', () => {
   test('attach propName and callback', () => {
     const Foo = () => {};
 
@@ -9,15 +9,15 @@ describe('provideSuckups', () => {
       return 'result';
     };
 
-    const sucks = provideSucks(callback);
+    const pumps = providePump(callback);
 
-    const ComposedComponent = sucks(Foo);
+    const ComposedComponent = pumps(Foo);
 
     expect(ComposedComponent[propName]).toEqual(callback);
   });
 });
 
-describe('suckup', () => {
+describe('pumpup', () => {
   test('fire callback', () => {
     const Foo = () => {};
 
@@ -34,11 +34,11 @@ describe('suckup', () => {
       return state[params.id];
     });
 
-    const sucks = provideSucks(mockCallback);
+    const pumps = providePump(mockCallback);
 
-    const ComposedComponent = sucks(Foo);
+    const ComposedComponent = pumps(Foo);
 
-    const result = suckup(ComposedComponent, state, props);
+    const result = pumpup(ComposedComponent, state, props);
 
     expect(mockCallback).toHaveBeenCalled();
     expect(result[0]).toEqual('bar1');

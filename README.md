@@ -1,24 +1,24 @@
-# React Suckup
+# React Pumpup
 
 ⛲️ Suck up data from bottom to top. ⛲️
 
 ## About
 
-Define data retrieve logic near component and Suck up data to Top of application.
+Define data retrieve logic near component and pump up data to Top of application.
 
 ## Install
 
 ```
-$ npm install st44100/react-suckup
+$ npm install st44100/react-pumpup
 ```
 
 ## Example
 
 ```Foo.jsx
-import { provideSucks } from 'react-suckup';
+import { providePump } from 'react-pumpup';
 
-// Define sucks
-export const sucks = provideSuckup((state: any, locals: any) => {
+// Define pumps
+export const pumps = providePump((state: any, locals: any) => {
   const id = locals.id;
   return state[id];
 };
@@ -27,11 +27,11 @@ export const sucks = provideSuckup((state: any, locals: any) => {
 export const Foo = () => <div>Foo</div>;
 
 // Bind
-return sucks(Foo);
+return pumps(Foo);
 ```
 
 ```server.js
-import suckup from 'react-suckup';
+import pumpup from 'react-pumpup';
 import Foo from 'Foo.jsx';
 
 const preparedState = {
@@ -41,9 +41,9 @@ const preparedState = {
   10010: 'value 4'
 };
 
-const suckedData = suckup(preparedState, {
+const pumpUpData = pumpup(preparedState, {
   id: '00010'
 });
 
-console.log(suckedData[0]); // #=> 'value 2'
+console.log(pumpUpData[0]); // #=> 'value 2'
 ```

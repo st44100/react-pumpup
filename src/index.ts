@@ -1,26 +1,26 @@
-export const propName = '@@suckup';
+export const propName = '@@pumpup';
 
-export const provideSucks = (callback: any) => (ComponsedComp: any) => {
+export const providePump = (callback: any) => (ComponsedComp: any) => {
   ComponsedComp[propName] = callback;
   return ComponsedComp;
 };
 
-export const suckup = (components: any, state: any, locals?: any) => {
+export const pumpup = (components: any, state: any, locals?: any) => {
   const results = (Array.isArray(components) ? components : [components])
     .filter((component) => component)
     .map((component) => ({
       component,
-      suck: component[propName]
+      pump: component[propName]
     }))
-    .filter(({ suck }) => suck)
-    .map(({ suck }) => {
-      if (typeof suck !== 'function') {
+    .filter(({ pump }) => pump)
+    .map(({ pump }) => {
+      if (typeof pump !== 'function') {
         return;
       }
-      return suck(state, locals);
+      return pump(state, locals);
     });
 
   return results;
 };
 
-export default suckup;
+export default pumpup;

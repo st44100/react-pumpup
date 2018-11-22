@@ -1,27 +1,28 @@
-var propName = '@@suckup';
-var provideSucks = function (getSchema) { return function (ComponsedComp) {
-    ComponsedComp[propName] = getSchema;
+var propName = '@@pumpup';
+var providePump = function (callback) { return function (ComponsedComp) {
+    ComponsedComp[propName] = callback;
     return ComponsedComp;
 }; };
-var suckup = function (components, state, locals) {
+var pumpup = function (components, state, locals) {
     var results = (Array.isArray(components) ? components : [components])
         .filter(function (component) { return component; })
         .map(function (component) { return ({
         component: component,
-        suck: component[propName]
+        pump: component[propName]
     }); })
         .filter(function (_a) {
-        var suck = _a.suck;
-        return suck;
+        var pump = _a.pump;
+        return pump;
     })
         .map(function (_a) {
-        var suck = _a.suck;
-        if (typeof suck !== 'function') {
+        var pump = _a.pump;
+        if (typeof pump !== 'function') {
             return;
         }
-        return suck(state, locals);
+        return pump(state, locals);
     });
     return results;
 };
 
-export { provideSucks, suckup };
+export default pumpup;
+export { propName, providePump, pumpup };

@@ -1,7 +1,7 @@
 {
-  "name": "react-suckup",
+  "name": "react-pumpup",
   "version": "0.0.1",
-  "description": "Suck up data from bottom to Top",
+  "description": "Pump up data from bottom to Top",
   "main": "dist/index.js",
   "author": "st44100 <st44100@gmail.com>",
   "license": "MIT",
